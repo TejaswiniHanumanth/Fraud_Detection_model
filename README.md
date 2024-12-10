@@ -10,8 +10,7 @@ This project develops a computer vision solution to detect potential fraud durin
 4. [Model Architecture](#model-architecture)
 5. [Training the Model](#training-the-model)
 6. [Evaluating the Model](#evaluating-the-model)
-7. [Directory Structure](#directory-structure)
-8. [Notes](#notes)
+
 
 ---
 
@@ -32,8 +31,14 @@ We build the model using a **ResNet-50** architecture fine-tuned for the problem
    ```bash
    git clone https://github.com/your-repo/retail-transaction-fraud.git
    cd retail-transaction-fraud
+   ```
 
-2. Dataset
+2. Install dependencies: 
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Dataset
 
 ### Dataset Structure
 
@@ -58,7 +63,7 @@ You should extract the frames from the videos yourself, as this step is not auto
 
 ---
 
-## Model Architecture
+4.## Model Architecture
 
 The model is based on **ResNet-50**, which is fine-tuned to predict two labels for each input image frame:
 1. **Cash Transaction** (Binary classification: 0 or 1)
@@ -72,7 +77,7 @@ The ResNet-50 architecture is modified with a new fully connected (FC) layer at 
 
 ---
 
-## Training the Model
+5.## Training the Model
 
 To train the model, use the `main.py` script. The training procedure includes:
 
@@ -84,4 +89,14 @@ To train the model, use the `main.py` script. The training procedure includes:
 ### Command to Train:
 ```bash
 python main.py --mode train
+```
+
+6.## Evaluating the Model
+
+After training, you can evaluate the model using a separate test dataset to validate its performance. The evaluation script uses the frames from the `test_frames` directory and labels from `test_labels.csv`.
+
+### Command to Evaluate:
+```bash
+python main.py --mode validate
+```
 
