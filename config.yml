@@ -1,20 +1,16 @@
 paths:
-  train_videos: "path_to_train_videos"
-  test_videos: "path_to_test_videos"
-  model_save_path: "model.pth"
+  train_csv: "data/train_labels.csv"
+  test_csv: "data/test_labels.csv"
+  train_frames: "data/train_frames"
+  test_frames: "data/test_frames"
+  model_save_path: "models/optimized_model.pth"
 
-hyperparameters:
-  batch_size: 8
+training:
+  batch_size: 16
   epochs: 10
   learning_rate: 0.001
-  frame_skip: 5
-  num_classes: 2
 
 model:
-  backbone: "resnet18"
-  lstm_hidden_size: 256
-  lstm_layers: 1
-
-labels:
-  video1.mp4: 0  # No invoice
-  video2.mp4: 1  # Invoice provided
+  pretrained: true
+  num_classes: 2
+  dropout: 0.3
