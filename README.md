@@ -100,3 +100,5 @@ After training, you can evaluate the model using a separate test dataset to vali
 python main.py --mode validate
 ```
 
+##Model Building 
+Basically we build a model to improve accuracy as I have shared in model_building.pdf
